@@ -1,0 +1,68 @@
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+
+  .terminal {
+    background: #2d2d2d;
+    border-radius: 10px;
+    margin: 1rem 0;
+    width: 80%;
+    max-width: 700px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+
+    .terminal-header {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0.5rem;
+      background: #1a1a1a;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+
+      .button {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        margin: 0 0.25rem;
+
+        &.red {
+          background: #ff605c;
+        }
+
+        &.yellow {
+          background: #ffbd44;
+        }
+
+        &.green {
+          background: #00ca4e;
+        }
+      }
+    }
+
+    .terminal-body {
+      padding: 1rem;
+
+      .command {
+        color: #00ff00;
+        margin: 0.5rem 0;
+      }
+
+      .response {
+        color: #ffffff;
+        margin: 0.5rem 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          color: #ffffff;
+          margin: 0.25rem 0;
+        }
+      }
+    }
+  }
+}
