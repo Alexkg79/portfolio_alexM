@@ -4,11 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
 .project-card {
   width: 300px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: #fff;
@@ -35,6 +36,7 @@
   height: 12px;
   border-radius: 50%;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .close {
@@ -58,7 +60,9 @@
 
 .project-image {
   width: 100%;
-  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: top;
 }
 
 .task-bar {
@@ -69,7 +73,6 @@
   padding: 5px 10px;
   margin-top: -4px;
   border-radius: 0 0 10px 10px;
-  
 }
 
 .task-icons {
@@ -90,16 +93,182 @@
   height: 20px;
 }
 
+.note-icon {
+  width: 20px; 
+  height: 20px; 
+}
+
+.wobble-animation {
+  animation: wobble 1s;
+}
+
+@keyframes wobble {
+  0%, 100% {
+    transform: none;
+  }
+  10% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  20% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  30% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  40% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  50% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  60% {
+    transform: translateX(5%) rotate(1deg);
+  }
+  70% {
+    transform: translateX(0%) rotate(0deg);
+  }
+}
+
+
+
 .project-links {
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  border-top: 1px solid #ddd;
+  width: 300px;
+  border-radius: 0 0 10px 10px;
+  margin-top: -5px;
+  z-index: 0;
+  position: relative;
 }
-
 
 .project-links a {
   text-decoration: none;
   color: #007bff;
   font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.project-links a:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Styles for modal */
+.project-modal-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.project-modal {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+  z-index: 1001;
+  padding: 0;
+}
+
+.project-modal .title-bar {
+  border-radius: 10px 10px 0 0;
+}
+
+.project-modal .task-bar {
+  border-radius: 0 0 10px 10px;
+}
+
+.project-modal .project-image {
+  border-radius: 0;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-modal .carousel .slide {
+  background: none;
+}
+
+.project-modal .carousel .control-arrow {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.project-modal .carousel .control-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Styles for notepad modal */
+.notepad-modal {
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+  z-index: 1001;
+  padding: 0;
+}
+
+.notepad-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eee;
+  padding: 5px 10px;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+
+.notepad-title-bar .buttons div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.notepad-title-bar .close {
+  background: #ff5f56;
+}
+
+.notepad-title-bar .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+.notepad-content {
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  background: #fafafa;
+  border-radius: 0 0 10px 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notepad-modal-overlay {
+  background: rgba(0, 0, 0, 0.123);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
 }
