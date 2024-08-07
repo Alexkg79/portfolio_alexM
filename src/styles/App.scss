@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,6 +21,7 @@ section {
   width: 100%;
   max-width: 1200px;
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -38,4 +39,3 @@ main {
   align-items: center;
   justify-content: center;
 }
-

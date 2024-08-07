@@ -1,55 +1,83 @@
 #home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 77vh;
+  padding: 20px;
+
+  .home-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 77vh; 
-    padding: 20px;
-  
-    .home-container {
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+
+    .profile-picture-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f44369, #3e3b92);
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 1200px; 
-      width: 100%;
-  
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+
       .profile-picture {
-        width: 250px; 
-        height: 250px; 
-        border-radius: 50%;
-        margin-right: 20px;
+        width: 80%; 
+        height: auto;
+        border-radius: 1000px;
       }
-  
-      .intro {
-        text-align: left;
-  
-        h1 {
-          font-size: 2.5em;
+    }
+
+    .intro {
+      text-align: left;
+      margin-left: 20px;
+
+      h1 {
+        font-size: 2.5em;
+
+        .gradient-text {
+          display: inline-block;
+          background: linear-gradient(120deg, #f44369, #3e3b92);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
         }
-  
-        ul {
-          list-style: none;
-          padding: 0;
-  
-          li {
-            margin: 10px 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 10px 0;
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+
+        a {
+          color: black;
+          font-size: 24px;
+
+          &:hover {
+            color: transparent;
+            background: linear-gradient(135deg, #f44369, #3e3b92);
+            -webkit-background-clip: text;
+            background-clip: text;
           }
-        }
-  
-        .social-icons {
-          display: flex;
-          justify-content: flex-start;
-          gap: 15px;
-  
-          a {
-            color: black;
-            font-size: 24px;
-  
-            &:hover {
-              color: blue;
-            }
+
+          i {
+            font-size: 1.5em;
           }
         }
       }
     }
   }
-  
+}

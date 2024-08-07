@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.scss';
@@ -16,10 +16,11 @@ const Header = () => {
     <header>
       <nav>
         <ul>
-          <li><Link to="/">home</Link></li>
-          <li><Link to="/about">about me</Link></li>
-          <h1>js</h1>
-          <li><Link to="/projects">portfolio</Link></li>
+          <li><NavLink exact to="/" activeClassName="active">home</NavLink></li>
+          <li><NavLink to="/about" activeClassName="active">about me</NavLink></li>
+          <h1>am</h1>
+          <li><NavLink to="/projects" activeClassName="active">portfolio</NavLink></li>
+          <li><NavLink to="/contact" activeClassName="active">contact</NavLink></li>
           <li>
             <button onClick={toggleDarkMode} className="dark-mode-toggle">
               <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />

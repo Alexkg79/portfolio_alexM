@@ -72,7 +72,7 @@ const ProjectCard = ({ title, images = [], liveDemo, sourceCode, description }) 
           </div>
         </div>
         <div className="project-links">
-          <a href={liveDemo} target="_blank" rel="noopener noreferrer">Démonstration en direct</a>
+          <a href={liveDemo} target="_blank" rel="noopener noreferrer">Démo en direct</a>
           <a href={sourceCode} target="_blank" rel="noopener noreferrer">Code source</a>
         </div>
       </div>
