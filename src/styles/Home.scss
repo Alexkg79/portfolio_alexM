@@ -4,6 +4,7 @@
   align-items: center;
   min-height: 77vh;
   padding: 20px;
+  margin-top: 30px;
 
   .home-container {
     display: flex;
@@ -23,7 +24,6 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s ease;
 
       .profile-picture {
         width: 80%; 
@@ -64,17 +64,15 @@
 
         a {
           color: black;
-          font-size: 24px;
+          font-size: 34px;
+          transition: color 0.3s;
 
           &:hover {
-            color: transparent;
-            background: linear-gradient(135deg, #f44369, #3e3b92);
+            color: blue;
+            background: linear-gradient(120deg, #f44369, #3e3b92);
             -webkit-background-clip: text;
             background-clip: text;
-          }
-
-          i {
-            font-size: 1.5em;
+            color: transparent;
           }
         }
       }

@@ -39,3 +39,36 @@ main {
   align-items: center;
   justify-content: center;
 }
+
+#about-me-title, #projects-title, #contact-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  h2 {
+    font-size: 3rem;
+    background: linear-gradient(120deg, #f44369, #3e3b92);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
