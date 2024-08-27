@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/portfolio_alex/static/css/main.14e273c3.css",
-    "main.js": "/portfolio_alex/static/js/main.bfb1a722.js",
-    "static/js/453.1f2d0e42.chunk.js": "/portfolio_alex/static/js/453.1f2d0e42.chunk.js",
-    "static/media/pr_react1.webp": "/portfolio_alex/static/media/pr_react1.ca26408f3fc9f5c21259.webp",
-    "static/media/pr_react2.webp": "/portfolio_alex/static/media/pr_react2.2abd595175feacb56a10.webp",
-    "static/media/pr_be1.webp": "/portfolio_alex/static/media/pr_be1.9fa214887dd705b4603c.webp",
-    "static/media/pp_alex.webp": "/portfolio_alex/static/media/pp_alex.9deb263dfa084752063e.webp",
-    "static/media/pr_react3.webp": "/portfolio_alex/static/media/pr_react3.fdf29a85a1cd0733dca2.webp",
-    "static/media/pr_be2.webp": "/portfolio_alex/static/media/pr_be2.5e85648c8ab2f683cfcd.webp",
-    "static/media/pr_be3.webp": "/portfolio_alex/static/media/pr_be3.5c80fd739b4b1c8ac648.webp",
-    "static/media/note.webp": "/portfolio_alex/static/media/note.79797e895ca238d7b2bf.webp",
-    "index.html": "/portfolio_alex/index.html",
-    "static/media/wifi.webp": "/portfolio_alex/static/media/wifi.4b66ddb033eb51c2a6af.webp",
-    "static/media/wifi_n.webp": "/portfolio_alex/static/media/wifi_n.eecadf5e50e161f9d280.webp",
-    "static/media/computer.webp": "/portfolio_alex/static/media/computer.d2adbf0287e88d90ee83.webp",
-    "static/media/battery.webp": "/portfolio_alex/static/media/battery.bf638fc04f0d8ae4d375.webp",
-    "static/media/battery_n.webp": "/portfolio_alex/static/media/battery_n.52e9d88c37b9f0c82d94.webp",
-    "main.14e273c3.css.map": "/portfolio_alex/static/css/main.14e273c3.css.map",
-    "main.bfb1a722.js.map": "/portfolio_alex/static/js/main.bfb1a722.js.map",
-    "453.1f2d0e42.chunk.js.map": "/portfolio_alex/static/js/453.1f2d0e42.chunk.js.map"
+    "main.css": "/portfolio_alexM/static/css/main.14e273c3.css",
+    "main.js": "/portfolio_alexM/static/js/main.8a6c0cc0.js",
+    "static/js/453.1f2d0e42.chunk.js": "/portfolio_alexM/static/js/453.1f2d0e42.chunk.js",
+    "static/media/pr_react1.webp": "/portfolio_alexM/static/media/pr_react1.ca26408f3fc9f5c21259.webp",
+    "static/media/pr_react2.webp": "/portfolio_alexM/static/media/pr_react2.2abd595175feacb56a10.webp",
+    "static/media/pr_be1.webp": "/portfolio_alexM/static/media/pr_be1.9fa214887dd705b4603c.webp",
+    "static/media/pp_alex.webp": "/portfolio_alexM/static/media/pp_alex.9deb263dfa084752063e.webp",
+    "static/media/pr_react3.webp": "/portfolio_alexM/static/media/pr_react3.fdf29a85a1cd0733dca2.webp",
+    "static/media/pr_be2.webp": "/portfolio_alexM/static/media/pr_be2.5e85648c8ab2f683cfcd.webp",
+    "static/media/pr_be3.webp": "/portfolio_alexM/static/media/pr_be3.5c80fd739b4b1c8ac648.webp",
+    "static/media/note.webp": "/portfolio_alexM/static/media/note.79797e895ca238d7b2bf.webp",
+    "index.html": "/portfolio_alexM/index.html",
+    "static/media/wifi.webp": "/portfolio_alexM/static/media/wifi.4b66ddb033eb51c2a6af.webp",
+    "static/media/wifi_n.webp": "/portfolio_alexM/static/media/wifi_n.eecadf5e50e161f9d280.webp",
+    "static/media/computer.webp": "/portfolio_alexM/static/media/computer.d2adbf0287e88d90ee83.webp",
+    "static/media/battery.webp": "/portfolio_alexM/static/media/battery.bf638fc04f0d8ae4d375.webp",
+    "static/media/battery_n.webp": "/portfolio_alexM/static/media/battery_n.52e9d88c37b9f0c82d94.webp",
+    "main.14e273c3.css.map": "/portfolio_alexM/static/css/main.14e273c3.css.map",
+    "main.8a6c0cc0.js.map": "/portfolio_alexM/static/js/main.8a6c0cc0.js.map",
+    "453.1f2d0e42.chunk.js.map": "/portfolio_alexM/static/js/453.1f2d0e42.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14e273c3.css",
-    "static/js/main.bfb1a722.js"
+    "static/js/main.8a6c0cc0.js"
   ]
 }
