@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { Carousel } from 'react-responsive-carousel';
+import { CSSTransition } from 'react-transition-group';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import icon1 from '../assets/icons/computer.png';
-import icon2 from '../assets/icons/battery.png';
-import icon3 from '../assets/icons/wifi.png';
-import noteIcon from '../assets/icons/note.png';
+import icon1 from '../assets/icons/computer.webp';
+import icon2 from '../assets/icons/battery.webp';
+import icon3 from '../assets/icons/wifi.webp';
+import icon2Dark from '../assets/icons/battery_n.webp';
+import icon3Dark from '../assets/icons/wifi_n.webp';
+import noteIcon from '../assets/icons/note.webp';
 import '../styles/ProjectCard.scss';
 
-const ProjectCard = ({ title, images = [], liveDemo, sourceCode, description }) => {
+Modal.setAppElement('#root');
+
+const ProjectCard = ({ title, images = [], liveDemo, sourceCode, description, isDarkMode }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [notepadModalIsOpen, setNotepadModalIsOpen] = useState(false);
 
@@ -46,8 +51,8 @@ const ProjectCard = ({ title, images = [], liveDemo, sourceCode, description }) 
 
   return (
     <>
-      <div className="project-card-container" onClick={openModal}>
-        <div className="project-card">
+      <div className="project-card-container">
+        <div className="project-card" onClick={openModal}>
           <div className="title-bar">
             <div className="buttons">
               <div className="close"></div>
@@ -57,17 +62,17 @@ const ProjectCard = ({ title, images = [], liveDemo, sourceCode, description }) 
             <span className="title">{title}</span>
           </div>
           {images.length > 0 ? (
-            <img src={images[0]} alt={title} className="project-image" />
+            <img src={images[0]} alt={title} className="project-image" loading="lazy"/>
           ) : (
             <div className="project-image-placeholder">No image available</div>
           )}
           <div className="task-bar">
             <div className="task-icons left">
-              <img src={icon1} alt="Icône Windows" className="task-icon" />
+              <img src={icon1} alt="Icône Windows" className="task-icon" loading="lazy"/>
             </div>
             <div className="task-icons right">
-              <img src={icon2} alt="Icône battery" className="task-icon" />
-              <img src={icon3} alt="Icône wifi" className="task-icon" />
+              <img src={isDarkMode ? icon3Dark : icon3} alt="Icône wifi" className="task-icon" loading="lazy"/>
+              <img src={isDarkMode ? icon2Dark : icon2} alt="Icône battery" className="task-icon" loading="lazy"/>
             </div>
           </div>
         </div>
@@ -77,61 +82,75 @@ const ProjectCard = ({ title, images = [], liveDemo, sourceCode, description }) 
         </div>
       </div>
 
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Project Modal"
-        className="project-modal"
-        overlayClassName="project-modal-overlay"
+      <CSSTransition
+        in={modalIsOpen}
+        timeout={300}
+        classNames="modal"
+        unmountOnExit
       >
-        <div className="title-bar">
-          <div className="buttons">
-            <div className="close" onClick={closeModal}></div>
-            <div className="minimize"></div>
-            <div className="maximize"></div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Project Modal"
+          className="project-modal"
+          overlayClassName="project-modal-overlay"
+        >
+          <div className="title-bar">
+            <div className="buttons">
+              <div className="close" onClick={closeModal}></div>
+              <div className="minimize"></div>
+              <div className="maximize"></div>
+            </div>
+            <span className="title">{title}</span>
           </div>
-          <span className="title">{title}</span>
-        </div>
-        {images.length > 0 ? (
-          <Carousel showThumbs={false} showStatus={false}>
-            {images.map((image, index) => (
-              <div key={index}>
-                <img src={image} alt={`${title} ${index + 1}`} className="project-image" />
-              </div>
-            ))}
-          </Carousel>
-        ) : (
-          <div className="project-image-placeholder">No images available</div>
-        )}
-        <div className="task-bar">
-          <div className="task-icons left">
-            <img src={icon1} alt="Icône Windows" className="task-icon" />
-            <img src={noteIcon} alt="Icône Bloc-notes" className="note-icon" onClick={openNotepadModal} />
+          {images.length > 0 ? (
+            <Carousel showThumbs={false} showStatus={false}>
+              {images.map((image, index) => (
+                <div key={index}>
+                  <img src={image} alt={`${title} ${index + 1}`} className="project-image" loading="lazy"/>
+                </div>
+              ))}
+            </Carousel>
+          ) : (
+            <div className="project-image-placeholder">No images available</div>
+          )}
+          <div className="task-bar">
+            <div className="task-icons left">
+              <img src={icon1} alt="Icône Windows" className="task-icon" loading="lazy"/>
+              <img src={noteIcon} alt="Icône Bloc-notes" className="note-icon" onClick={openNotepadModal} loading="lazy"/>
+            </div>
+            <div className="task-icons right">
+              <img src={isDarkMode ? icon3Dark : icon3} alt="Icône wifi" className="task-icon" loading="lazy"/>
+              <img src={isDarkMode ? icon2Dark : icon2} alt="Icône battery" className="task-icon" loading="lazy"/>
+            </div>
           </div>
-          <div className="task-icons right">
-            <img src={icon2} alt="Icône battery" className="task-icon" />
-            <img src={icon3} alt="Icône wifi" className="task-icon" />
-          </div>
-        </div>
-      </Modal>
+        </Modal>
+      </CSSTransition>
 
-      <Modal
-        isOpen={notepadModalIsOpen}
-        onRequestClose={closeNotepadModal}
-        contentLabel="Notepad Modal"
-        className="notepad-modal"
-        overlayClassName="notepad-modal-overlay"
+      <CSSTransition
+        in={notepadModalIsOpen}
+        timeout={300}
+        classNames="notepad-modal"
+        unmountOnExit
       >
-        <div className="notepad-title-bar">
-          <div className="buttons">
-            <div className="close" onClick={closeNotepadModal}></div>
+        <Modal
+          isOpen={notepadModalIsOpen}
+          onRequestClose={closeNotepadModal}
+          contentLabel="Notepad Modal"
+          className="notepad-modal"
+          overlayClassName="notepad-modal-overlay"
+        >
+          <div className="notepad-title-bar">
+            <div className="buttons">
+              <div className="close" onClick={closeNotepadModal}></div>
+            </div>
+            <span className="title">Description</span>
           </div>
-          <span className="title">Description</span>
-        </div>
-        <div className="notepad-content">
-          <p>{description}</p>
-        </div>
-      </Modal>
+          <div className="notepad-content">
+            <p>{description}</p>
+          </div>
+        </Modal>
+      </CSSTransition>
     </>
   );
 };
