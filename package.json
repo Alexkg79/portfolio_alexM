@@ -6,6 +6,7 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/material": "^5.16.6",
@@ -13,7 +14,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap-icons": "^1.11.3",
-    "framer-motion": "^11.3.21",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^11.3.24",
     "postcss-loader": "^8.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -22,7 +24,10 @@
     "react-router-dom": "^6.26.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
+    "react-transition-group": "^4.4.5",
+    "react-tsparticles": "^2.9.3",
     "sass": "^1.77.8",
+    "tsparticles": "^2.9.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
