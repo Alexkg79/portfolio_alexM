@@ -2,6 +2,7 @@
   "name": "portfolio_alex",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alexkg79.github.io/portfolio_alex/",
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
