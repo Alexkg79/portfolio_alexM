@@ -1,0 +1,29 @@
+.title-card-container {
+  width: 100%;
+  max-width: 8px; 
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0;
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin: 100px 0 40px 0;
+    .underline {
+      position: absolute;
+      bottom: 0;
+      left: 50%; 
+      transform: translateX(-50%);
+      width: 50%; 
+      height: 4px;
+      background: linear-gradient(135deg, #f44369, #3e3b92);
+      border-radius: 2px;
+    }
+  }
+}
