@@ -2,6 +2,17 @@ header {
   nav {
     width: 60%;
     margin: 0 auto;
+    position: relative;
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
     ul {
       display: flex;
       justify-content: space-between;
@@ -9,19 +20,17 @@ header {
       list-style: none;
       padding: 0;
       margin: 0;
-
       li {
         margin: 0 15px;
         position: relative;
-
         a {
+          cursor: pointer;
           text-decoration: none;
           color: #000;
           font-weight: 400;
           font-size: 1.2rem;
           padding-bottom: 5px;
           position: relative;
-          
           &.active::after {
             content: '';
             display: block;
@@ -32,20 +41,17 @@ header {
             border-radius: 2px;
           }
         }
-
         .dark-mode-toggle {
           background: none;
           border: none;
           cursor: pointer;
           font-size: 1.5rem;
           color: #000;
-
           &:focus {
             outline: none;
           }
         }
       }
-
       h1 {
         margin: 0 20px;
         font-size: 3rem;
@@ -53,11 +59,40 @@ header {
     }
   }
 }
-
+@media (max-width: 768px) {
+  header {
+    z-index: 100;
+    nav {
+      width: 100%;
+      .menu-toggle {
+        display: block;
+        z-index: 1001;
+      }
+      ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        &.open {
+          left: 0;
+        }
+        li {
+          margin: 15px 0;
+        }
+        h1 {
+          order: -1;
+        }
+      }
+    }
+  }
+}
 body.dark-mode {
   background-color: #333;
-  color: #fff;
-
   header {
     nav {
       ul {
@@ -67,6 +102,137 @@ body.dark-mode {
           }
         }
       }
+    }
+  }
+  header {
+    .open {
+      background-color: #333;
+    }
+    .menu-toggle{
+      color: white;
+    }
+  }
+  #home {
+    .intro {
+      h1, h2, ul li {
+        color: var(--text-primary);
+        text-shadow: 0 0 10px rgba(var(--bg-primary), 0.5);
+      }
+      .gradient-text {
+        background: linear-gradient(120deg, var(--gradient-start), var(--gradient-end));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      .social-icons {
+        a {
+          color: var(--icon-color);
+          &:hover {
+            background: linear-gradient(120deg, var(--icon-hover-start), var(--icon-hover-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+        }
+      }
+    }
+  }
+  #about {  
+    .terminal {
+      background: #d1d1d1;
+      border-radius: 10px;
+      margin: 1rem 0;
+      width: 80%;
+      max-width: 700px;
+      color: #000000;
+      font-family: 'Courier New', Courier, monospace;
+      .terminal-header {
+        background: #e9e9e9;
+      }
+      .typing-text {
+        color: #000000;
+        font-size: 16px;
+      }
+      .cursor {
+        background-color: #000000c9;
+        color: #000000;
+      }
+      .command {
+        color: #1500ff;
+      }
+    }
+  }
+  #projects {
+    .title {
+      color: black;
+    }
+    .task-bar {
+      background: #e9e9e9;
+    }
+    .task-icons {
+      color: black;
+    }
+  }
+  .title-bar {
+    background: #e9e9e9;
+  }
+  .task-bar {
+    background: #e9e9e9;
+  }
+  .notepad-content {
+    color: #e9e9e9;
+  }
+  .title {
+    color: rgb(0, 0, 0);
+  }
+  .title-card-container .title {
+    color: rgb(255, 255, 255);
+  }
+  .project-links a {
+    color: white;
+  }
+  .ReactModalPortal {
+    .title {
+      color: rgb(0, 0, 0);
+    }
+    .notepad-title-bar{
+      background: #e9e9e9;
+    }
+    .notepad-content{
+      background: #d1d1d1;
+    }
+    p {
+      color: black;
+    }
+  }
+  #contact {
+    .contact-container {
+      background: #ffffff;
+    }
+    h2 {
+      color: black;
+
+    }
+    form {
+      .form-group {
+        label {
+          color: rgb(0, 0, 0);
+        }
+        input {
+          background: #2d2d2d;
+          color: white;
+        }
+        textarea {
+          background: #2d2d2d;
+          color: white;
+        }
+      }
+    }
+  }
+  footer {
+      background-color: #f0f0f0;
+    p {
+      color: black;
     }
   }
 }
