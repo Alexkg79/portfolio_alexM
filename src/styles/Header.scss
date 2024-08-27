@@ -59,6 +59,12 @@ header {
     }
   }
 }
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 768px) {
   header {
     z-index: 100;

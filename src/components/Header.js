@@ -4,12 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.scss';
 
-const Header = ({ isDarkMode, onToggleDarkMode }) => {
+const Header = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    document.body.classList.toggle('dark-mode', newMode);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.classList.toggle('menu-open', !isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.classList.remove('menu-open');
   };
 
   useEffect(() => {
@@ -25,13 +37,13 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
           <FontAwesomeIcon icon={faBars} />
         </span>
         <ul className={isMenuOpen ? 'open' : ''}>
-          <li><Link to="home" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>home</Link></li>
-          <li><Link to="about" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>about me</Link></li>
+          <li><Link to="home" smooth={true} duration={500} onClick={closeMenu}>home</Link></li>
+          <li><Link to="about" smooth={true} duration={500} onClick={closeMenu}>about me</Link></li>
           <h1>am</h1>
-          <li><Link to="projects" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>portfolio</Link></li>
-          <li><Link to="contact" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>contact</Link></li>
+          <li><Link to="projects" smooth={true} duration={500} onClick={closeMenu}>portfolio</Link></li>
+          <li><Link to="contact" smooth={true} duration={500} onClick={closeMenu}>contact</Link></li>
           <li>
-            <span onClick={onToggleDarkMode} className="dark-mode-toggle">
+            <span onClick={toggleDarkMode} className="dark-mode-toggle">
               <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
             </span>
           </li>
