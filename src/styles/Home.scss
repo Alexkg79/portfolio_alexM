@@ -1,18 +1,29 @@
+
 #home {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 77vh;
-  padding: 20px;
-  margin-top: 30px;
-
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin-top: -20px;
+  // Effet particules
+  #tsparticles {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+  }
   .home-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 1200px;
     width: 100%;
-
     .profile-picture-container {
       position: relative;
       width: 300px;
@@ -24,55 +35,83 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
       .profile-picture {
         width: 80%; 
         height: auto;
         border-radius: 1000px;
       }
     }
-
+    // Texte
     .intro {
       text-align: left;
       margin-left: 20px;
-
       h1 {
         font-size: 2.5em;
-
         .gradient-text {
-          display: inline-block;
-          background: linear-gradient(120deg, #f44369, #3e3b92);
+          background: linear-gradient(120deg, #e92a54, #0d08a5);
+          -webkit-text-fill-color: transparent;
           -webkit-background-clip: text;
           background-clip: text;
-          color: transparent;
+          display: inline-block;
+          font-weight: bold;
         }
       }
-
       ul {
         list-style: none;
         padding: 0;
-
         li {
           margin: 10px 0;
         }
       }
-
+      // Icons
       .social-icons {
         display: flex;
         justify-content: flex-start;
         gap: 15px;
-
         a {
           color: black;
           font-size: 34px;
           transition: color 0.3s;
-
           &:hover {
             color: blue;
             background: linear-gradient(120deg, #f44369, #3e3b92);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    padding-top: 60px;
+    min-height: calc(100vh - 60px); 
+    .home-container {
+      flex-direction: column;  
+      .profile-picture-container {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 30px;
+      }
+      .intro {
+        text-align: center;
+        margin-left: 0;
+        h1 {
+          font-size: 2em;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          li {
+            margin: 5px 0;
+          }
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 20px;
+          a {
+            font-size: 30px; 
           }
         }
       }
