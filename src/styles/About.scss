@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-
   .terminal {
     background: #2d2d2d;
     border-radius: 10px;
@@ -12,7 +10,6 @@
     max-width: 700px;
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
-
     .terminal-header {
       display: flex;
       justify-content: flex-start;
@@ -20,47 +17,75 @@
       background: #1a1a1a;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
-
       .button {
         height: 12px;
         width: 12px;
         border-radius: 50%;
         margin: 0 0.25rem;
-
         &.red {
           background: #ff605c;
         }
-
         &.yellow {
           background: #ffbd44;
         }
-
         &.green {
           background: #00ca4e;
         }
       }
     }
-
     .terminal-body {
       padding: 1rem;
-
+      .response {
+    p {
+      margin: 0;
+      line-height: 1.1;
+      padding: 2px 0;
+    }
+    .skill-item {
+      display: inline-flex;
+      align-items: center;
+      svg {
+        margin-left: 10px;
+      }
+    }
+  }
       .command {
         color: #00ff00;
         margin: 0.5rem 0;
       }
-
       .response {
         color: #ffffff;
         margin: 0.5rem 0;
       }
-
       ul {
         list-style: none;
         padding: 0;
-
         li {
           color: #ffffff;
           margin: 0.25rem 0;
+        }
+      }
+      .typing-text {
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+      .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 20px;
+        background-color: #ffffffde;
+        animation: blink 0.7s infinite;
+        vertical-align: middle;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
         }
       }
     }
