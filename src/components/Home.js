@@ -90,7 +90,7 @@ const Home = () => {
           </div>
           <div className="intro">
             <h1>
-              Salut, moi c'est <span className="gradient-text">Alex</span> 👋
+              Salut, moi c'est <span className="gradient-text">Alex</span> <span className="waving-hand">👋</span>
             </h1>
             <h2>Je suis un développeur FullStack</h2>
             <ul>
