@@ -4,15 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.scss';
 
-const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const Header = ({ isDarkMode, toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    document.body.classList.toggle('dark-mode', newMode);
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

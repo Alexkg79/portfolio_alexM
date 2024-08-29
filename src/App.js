@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
-      <Header isDarkMode={isDarkMode} onToggleDarkMode={toggleDarkMode} />
+      <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <div className="content-wrapper">
           <Home />
