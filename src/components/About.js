@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import '../styles/About.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faPython, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faPython, faDocker, faPhp } from '@fortawesome/free-brands-svg-icons';
 import { faPaintBrush, faServer, faCode } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
@@ -12,17 +12,18 @@ const About = () => {
   const terminal1Ref = useRef(null);
   const terminal2Ref = useRef(null);
 
-  const fullText1 = "Bonjour ! Moi c'est Alex Marolleau, développeur web passionné par la création d'applications web dynamiques et engageantes. J'ai suivi plusieurs formations dans le web et obtenu un Bac +2 en développement web, que j'ai réalisé en alternance. Je préfère le développement front-end, mais j'ai également une solide expérience dans la création d'applications full-stack.";
+  const fullText1 = "Je suis un développeur web passionné par la création d'applications web dynamiques et engageantes. J'ai suivi plusieurs formations dans le web et obtenu un Bac +2 en développement web, que j'ai réalisé en alternance. Je préfère le développement front-end, mais j'ai également une solide expérience dans la création d'applications full-stack.";
 
   // Utilisation de useMemo pour mémoriser le tableau
   const fullText2 = useMemo(() => [
-    { text: <strong>Maîtrisé avec:</strong>, icon: null },
+    { text: <strong>Maîtrisé :</strong>, icon: null },
     { text: 'HTML', icon: faHtml5 },
     { text: 'CSS', icon: faCss3Alt },
     { text: 'JavaScript', icon: faJs },
     { text: 'React', icon: faReact },
     { text: 'Node.js', icon: faNodeJs },
     { text: 'Express.js', icon: faServer },
+    { text: 'PHP', icon: faPhp },
     { text: <><br /><strong>Exposé à:</strong></>, icon: null },
     { text: 'Python', icon: faPython },
     { text: 'Adobe Illustrator', icon: faPaintBrush },
