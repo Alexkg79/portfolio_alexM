@@ -1,12 +1,90 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import '../styles/Home.scss';
 import profilePicture from '../assets/img/pp_alex.webp';
 
 const Home = () => {
-  const particlesInit = async (engine) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
+  }, []);
+
+  const particlesOptions = {
+    background: {
+      color: {
+        value: "transparent",
+      },
+    },
+    fpsLimit: 60,
+    interactivity: {
+      events: {
+        onHover: {
+          enable: !isMobile,
+          mode: "repulse",
+        },
+        resize: true,
+      },
+      modes: {
+        repulse: {
+          distance: 200,
+          duration: 0.4,
+        },
+      },
+    },
+    particles: {
+      color: {
+        value: "#3e3b92",
+      },
+      links: {
+        color: "#f44369",
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 1,
+      },
+      collisions: {
+        enable: false,
+      },
+      move: {
+        direction: "none",
+        enable: true,
+        outModes: {
+          default: "bounce",
+        },
+        random: false,
+        speed: isMobile ? 0.3 : 0.5,
+        straight: false,
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 800,
+        },
+        value: isMobile ? 30 : 70,
+      },
+      opacity: {
+        value: 0.5,
+      },
+      shape: {
+        type: "circle",
+      },
+      size: {
+        value: { min: 1, max: isMobile ? 3 : 5 },
+      },
+    },
+    detectRetina: true,
   };
 
   return (
@@ -14,74 +92,7 @@ const Home = () => {
       <Particles
         id="tsparticles"
         init={particlesInit}
-        options={{
-          background: {
-            color: {
-              value: "transparent",
-            },
-          },
-          fpsLimit: 120,
-          interactivity: {
-            events: {
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-              resize: true,
-            },
-            modes: {
-              push: {
-                quantity: 4,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: "#3e3b92",
-            },
-            links: {
-              color: "#f44369",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: false,
-              speed: 1,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 800,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 5 },
-            },
-          },
-          detectRetina: true,
-        }}
+        options={particlesOptions}
       />
       <div className="content-animation">
         <div className="home-container">

@@ -12,8 +12,13 @@ const About = () => {
   const terminal1Ref = useRef(null);
   const terminal2Ref = useRef(null);
 
-  const fullText1 = "Je suis un développeur web passionné par la création d'applications web dynamiques et engageantes. J'ai suivi plusieurs formations dans le web et obtenu un Bac +2 en développement web, que j'ai réalisé en alternance. Je préfère le développement front-end, mais j'ai également une solide expérience dans la création d'applications full-stack.";
+  const fullText1 = `Je suis un développeur web passionné par la création d'applications dynamiques. En 2020, j'ai découvert ma passion pour le webdesign, ce qui m'a conduit à me spécialiser dans le développement web, où j'ai trouvé ma véritable vocation.
 
+Pour approfondir mes compétences, j'ai suivi un Bac +2 en développement web en alternance avec OpenClassrooms. Lors de cette expérience, j'ai travaillé à l'UDAF sur un projet de gestion de parc automobile en PHP, renforçant ainsi mes compétences en back-end et en développement de solutions pratiques.
+
+Bien que le front-end soit ma préférence pour la création d'interfaces intuitives, mon parcours m'a également permis de maîtriser les aspects full-stack du développement, me rendant apte à intervenir sur toutes les étapes d'un projet web.`;
+
+  
   // Utilisation de useMemo pour mémoriser le tableau
   const fullText2 = useMemo(() => [
     { text: <strong>Maîtrisé :</strong>, icon: null },
@@ -25,11 +30,11 @@ const About = () => {
     { text: 'Express.js', icon: faServer },
     { text: 'PHP', icon: faPhp },
     { text: <><br /><strong>Exposé à:</strong></>, icon: null },
-    { text: 'Python', icon: faPython },
+    { text: 'Docker', icon: faDocker },
     { text: 'Adobe Illustrator', icon: faPaintBrush },
     { text: <><br /><strong>Actuellement en apprentissage:</strong></>, icon: null },
     { text: 'TypeScript', icon: faCode },
-    { text: 'Docker', icon: faDocker },
+    { text: 'Python', icon: faPython },
     { text: 'Next.js', icon: faReact },
   ], []);
 
@@ -61,7 +66,7 @@ const About = () => {
 
   const animateText = useCallback((fullText, setText, isArray = false) => {
     let index = 0;
-    const typingSpeed = 10;
+    const typingSpeed = 1;
 
     const timer = setInterval(() => {
       if (isArray) {

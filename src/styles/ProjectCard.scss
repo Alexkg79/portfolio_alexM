@@ -79,6 +79,9 @@
 }
 .task-icons.left {
   justify-content: flex-start;
+  .note-icon {
+    cursor: pointer;
+  }
 }
 .task-icons.right {
   justify-content: flex-end;
