@@ -1,99 +1,90 @@
-#about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .terminal {
-    background: #2d2d2d;
-    border-radius: 10px;
-    margin: 1rem 0;
-    width: 80%;
-    max-width: 700px;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    .terminal-header {
-      display: flex;
-      justify-content: flex-start;
-      padding: 0.5rem;
-      background: #1a1a1a;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      .button {
-        height: 12px;
-        width: 12px;
-        border-radius: 50%;
-        margin: 0 0.25rem;
-        &.red {
-          background: #ff605c;
-        }
-        &.yellow {
-          background: #ffbd44;
-        }
-        &.green {
-          background: #00ca4e;
-        }
-      }
-    }
-    .terminal-body {
-      padding: 1rem;
-      .response {
-    p {
-      margin: 0;
-      line-height: 1.1;
-      padding: 2px 0;
-    }
-    .skill-item {
-      display: inline-flex;
-      align-items: center;
-      svg {
-        margin-left: 10px;
-      }
+@import '../index.scss';
+.about-section {
+  padding: 6rem 1.5rem; 
+  .about-content {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
   }
-      .command {
-        color: #00ff00;
-        margin: 0.5rem 0;
+  .terminal-window {
+    background-color: $terminal-bg;
+    border: 1px solid $terminal-border;
+    border-radius: 0.5rem; 
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    overflow: hidden;
+    height: 100%;
+  }
+  .terminal-header {
+    background-color: $terminal-header-bg;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    .window-controls {
+      display: flex;
+      gap: 0.5rem;
+      .dot {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        &.red { background-color: #f87171; }
+        &.yellow { background-color: #fbbd23; }
+        &.green { background-color: #34d399; }
       }
-      .response {
-        color: #ffffff;
-        margin: 0.5rem 0;
+    }
+    .window-title {
+      color: $secondary-text-color;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.875rem;
+      margin-left: 1rem;
+    }
+  }
+  .terminal-body {
+    padding: 1.5rem;
+    p {
+      color: $secondary-text-color;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
       }
-      ul {
+    }
+    .skill-category {
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      h3 {
+        color: $primary-text-color;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .skills-list {
         list-style: none;
         padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
         li {
-          color: #ffffff;
-          margin: 0.25rem 0;
-        }
-      }
-      .typing-text {
-        word-break: break-word;
-          white-space: pre-line;
-      
-      }
-      .cursor {
-        display: inline-block;
-        width: 10px;
-        height: 20px;
-        background-color: #ffffffde;
-        animation: blink 0.7s infinite;
-        vertical-align: middle;
-      }
-      @keyframes blink {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
+          background-color: $terminal-header-bg;
+          color: $secondary-text-color;
+          padding: 0.25rem 0.75rem;
+          border-radius: 999px;
+          font-size: 0.875rem;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+              color: $primary-text-color;
+              background-color: $accent-color;
+          }
         }
       }
     }
   }
-}
-@media (max-width: 540px) {
-  #about .terminal {
-    width: 70%;
-    }
 }

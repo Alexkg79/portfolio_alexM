@@ -1,94 +1,102 @@
-import React from 'react';
-import ProjectCard from './ProjectCard';
-import '../styles/Projects.scss';
+import React, { useState, Suspense} from 'react';
+import TitleCard from './TitleCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faPython, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import project1Image1 from '../assets/projet/pr_react1.webp';
 import project1Image2 from '../assets/projet/pr_react2.webp';
 import project1Image3 from '../assets/projet/pr_react3.webp';
 import project2Image1 from '../assets/projet/pr_be1.webp';
 import project2Image2 from '../assets/projet/pr_be2.webp';
 import project2Image3 from '../assets/projet/pr_be3.webp';
+import project3Image1 from '../assets/projet/pr_int1.webp';
+import '../styles/Projects.scss'; 
+const ProjectModal = React.lazy(() => import('./ProjectModal'));
 
-const projects = [
-  {
-    id: 1,
-    title: 'Kasa App',
-    images: [project1Image1, project1Image2, project1Image3],
-    description: "Application web moderne de location d'appartements entre particuliers, développée avec React. Présente une interface utilisateur dynamique et responsive avec des fonctionnalités avancées comme une galerie d'images et des menus déroulants.",
-    technologies: ['HTML', 'CSS', 'React'],
-    liveDemo: 'https://kasa-app-six.vercel.app/',
-    sourceCode: 'https://github.com/Alexkg79/kasa-app'
-  },
-  {
-    id: 2,
-    title: 'Mon vieux grimoire',
-    images: [project2Image1, project2Image2, project2Image3],
-    description: "Plateforme de gestion et de notation de livres avec une API RESTful complète. Inclut un système d'authentification sécurisé, gestion CRUD pour les livres et notations, et optimisation des images téléchargées.",
-    technologies: ['Node.js', 'Express', 'MongoDB'],
-    liveDemo: 'https://back-end-book.onrender.com/',
-    sourceCode: 'https://github.com/Alexkg79/Back-end-Book'
-  }
+// Data for projects
+const projectsData = [
+    { id: 1, title: 'Kasa App', images: [project1Image1, project1Image2, project1Image3], descriptionShort: "Application web moderne, développée avec React.", description: "Développement complet du front-end pour une application web de location immobilière en utilisant React. Ce projet inclut l'implémentation d'un routage côté client avec React Router pour une navigation fluide entre les pages. La création d'une interface dynamique et responsive a nécessité le développement de plusieurs composants réutilisables, notamment une galerie d'images et des menus déroulants animés en CSS. Le style a été géré de manière modulaire avec SASS.", technologies: ['HTML', 'CSS', 'React'], liveDemo: 'https://kasa-app-six.vercel.app/', sourceCode: 'https://github.com/Alexkg79/kasa-app', learnings: [
+            "Maîtrise des React Hooks pour un state complexe",
+            "Intégration 'pixel-perfect' de maquettes Figma",
+            "Création de composants réutilisables (Carrousel, Accordéon)",
+            "Logique de routing avancée avec React Router"
+        ] },
+    { id: 2, title: 'Mon vieux grimoire', images: [project2Image1, project2Image2, project2Image3], descriptionShort: "Plateforme de gestion de livres.", description: "Développement de l'API RESTful pour un site de notation de livres. Le projet inclut la mise en place d'un système d'authentification sécurisé pour les utilisateurs, la gestion des opérations CRUD complètes pour les livres et leurs notations, ainsi qu'un middleware pour l'optimisation à la volée des images. L'architecture de l'application est structurée selon le modèle MVC pour assurer la maintenabilité du code.", technologies: ['Node.js', 'Express', 'MongoDB'], liveDemo: 'https://back-end-book.onrender.com/', sourceCode: 'https://github.com/Alexkg79/Back-end-Book', learnings: [
+            "Construction d'une API RESTful complète de A à Z",
+            "Sécurisation des routes via authentification par token",
+            "Manipulation d'une base de données NoSQL (MongoDB)",
+            "Optimisation d'images avec un middleware (Sharp)"
+        ] },
+    { id: 3, title: 'Booki Intégration', images: [project3Image1], descriptionShort: "Intégration d'une maquette Figma.", description: "Intégration d'une maquette FigmaIntégration d'une maquette Figma pour réaliser la page d'accueil d'une agence de voyage, entièrement en HTML et CSS. Le projet est centré sur la création d'une interface entièrement responsive, garantissant un affichage parfait et une expérience utilisateur cohérente sur mobile, tablette et desktop. La mission a impliqué une analyse précise des maquettes et la production d'un code sémantique et maintenable.", technologies: ['HTML', 'CSS'], liveDemo: 'https://alexkg79.github.io/booki-starter-code/', sourceCode: 'https://github.com/Alexkg79/booki-starter-code',learnings: [
+            "Maîtrise des fondamentaux HTML5 et CSS3",
+            "Mise en page complexe avec Flexbox et Grid",
+            "Application d'une approche 'mobile-first'",
+            "Respect des normes d'accessibilité web"
+        ] },
 ];
 
-const getTechIcon = (tech) => {
-  switch(tech.toLowerCase()) {
-    case 'html': return faHtml5;
-    case 'css': return faCss3Alt;
-    case 'javascript': return faJs;
-    case 'react': return faReact;
-    case 'node.js': return faNodeJs;
-    case 'python': return faPython;
-    case 'docker': return faDocker;
-    default: return null;
-  }
-};
+export default function Projects2() {
+  const [selectedProject, setSelectedProject] = useState(null);
 
-const Projects = ({ isDarkMode }) => {
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
   return (
-    <section id="projects">
-      <div className="projects-container">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            images={project.images}
-            description={
-              <>
-                {project.description}
-                <div className="technologies">
-                  <h4>Technologies utilisées :</h4>
-                  <div className="tech-icons">
-                    {project.technologies.map((tech, index) => {
-                      const icon = getTechIcon(tech);
-                      return icon ? (
-                        <FontAwesomeIcon 
-                          key={index} 
-                          icon={icon} 
-                          title={tech} 
-                          className={isDarkMode ? 'icon-dark' : 'icon-light'}
-                        />
-                      ) : (
-                        <span 
-                          key={index} 
-                          className={`tech-text ${isDarkMode ? 'text-dark' : 'text-light'}`}
-                        >
-                          {tech}
-                        </span>
-                      );
-                    })}
+    <section id="projets" className="projects-section">
+      <div className="projects-content">
+        <TitleCard title="Mes Projets" />
+        <div className="swiper-container-wrapper">
+            <Swiper
+              modules={[Navigation, Pagination, A11y]}
+              spaceBetween={30}
+              slidesPerView={1}
+              navigation={{
+                nextEl: '.custom-swiper-button-next',
+                prevEl: '.custom-swiper-button-prev',
+              }}
+              pagination={{ clickable: true }}
+              a11y={{ prevSlideMessage: 'Projet précédent', nextSlideMessage: 'Projet suivant' }}
+              breakpoints={{
+                768: { slidesPerView: 2, spaceBetween: 40 },
+                1024: { slidesPerView: 2, spaceBetween: 50 },
+              }}
+            >
+              {projectsData.map((project) => (
+                <SwiperSlide key={project.id}>
+                   <div className="project-card" onClick={() => openModal(project)}>
+                      <div className="card-image">
+                          <img src={project.images[0]} loading="lazy" alt={`Aperçu du projet ${project.title}`} />
+                      </div>
+                      <div className="card-content">
+                          <h3 className="card-title">{project.title}</h3>
+                          <p className="card-description">{project.descriptionShort}</p>
+                          <div className="card-tags">
+                              {project.technologies.map((tech) => (<span key={tech}>{tech}</span>))}
+                          </div>
+                          <div className="card-actions">
+                              <a href={project.liveDemo} className="btn btn-primary" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faExternalLinkAlt} /> Démo</a>
+                              <a href={project.sourceCode} className="btn btn-secondary" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /> Code</a>
+                          </div>
+                      </div>
                   </div>
-                </div>
-              </>
-            }
-            liveDemo={project.liveDemo}
-            sourceCode={project.sourceCode}
-            isDarkMode={isDarkMode}
-          />
-        ))}
+                        <Suspense fallback={<div className="loading-spinner">Chargement...</div>}>
+                          {selectedProject && <ProjectModal project={selectedProject} onClose={closeModal} />}
+                        </Suspense>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+        </div>
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

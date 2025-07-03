@@ -1,49 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import '../styles/Header.scss';
-
-const Header = ({ isDarkMode, toggleDarkMode }) => {
+  
+export default function Header2() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.body.classList.toggle('menu-open', !isMenuOpen);
   };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-    document.body.classList.remove('menu-open');
-  };
-
-  useEffect(() => {
-    return () => {
-      document.body.classList.remove('menu-open');
-    };
-  }, []);
 
   return (
-    <header>
-      <nav className={isMenuOpen ? 'open' : ''}>
-        <span className="menu-toggle" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} />
-        </span>
-        <ul className={isMenuOpen ? 'open' : ''}>
-          <li><Link to="home" smooth={true} duration={500} onClick={closeMenu}>home</Link></li>
-          <li><Link to="about" smooth={true} duration={500} onClick={closeMenu}>about me</Link></li>
-          <h1>am</h1>
-          <li><Link to="projects" smooth={true} duration={500} onClick={closeMenu}>portfolio</Link></li>
-          <li><Link to="contact" smooth={true} duration={500} onClick={closeMenu}>contact</Link></li>
-          <li>
-            <span onClick={toggleDarkMode} className="dark-mode-toggle">
-              <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
-            </span>
-          </li>
-        </ul>
-      </nav>
+    <header className={`site-header ${isMenuOpen ? 'nav-open' : ''}`}>
+      <div className="header-content">
+        <div className="logo">
+          <a href="#">am</a>
+        </div>
+        <nav className="main-nav">
+          <ul>
+            {/* On ferme le menu quand on clique sur un lien */}
+            <li><a href="#hero" onClick={toggleMenu}>Accueil</a></li>
+            <li><a href="#about" onClick={toggleMenu}>À Propos</a></li>
+            <li><a href="#projets" onClick={toggleMenu}>Projets</a></li>
+            <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
+          </ul>
+
+          <div className="nav-social-links">
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FontAwesomeIcon icon={faTwitter} /></a>
+          </div>
+        </nav>
+        
+        {/* Le clic sur le bouton déclenche la fonction toggleMenu */}
+        <button className="mobile-nav-toggle" aria-label="Ouvrir la navigation" onClick={toggleMenu}>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+      </div>
     </header>
   );
-};
-
-export default Header;
+}

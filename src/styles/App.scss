@@ -1,54 +1,76 @@
-@import 'darkMode';
+@import '../index.scss';
 
-body {
-  font-family: 'Quicksand', Arial, sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  width: 100%;
-}
-header, footer {
-  text-align: center;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-section {
-  width: 100%;
-  max-width: 1200px;
-  box-sizing: border-box;
-}
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-header, footer {
-  flex-shrink: 0;
-  width: 100%; 
-}
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
 }
-.content-animation {
-  animation: fadeInUp 0.6s ease-out;
+
+body {
+  font-family: $font-family-sans;
+  background-color: $dark-background;
+  color: $primary-text-color;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "main-content"; 
+  padding: 0;
+}
+
+// On cible les deux enfants directs de .App
+.App > * {
+  grid-area: main-content;
+}
+.content-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative; 
+}
+
+// --- 4. STYLES DES COMPOSANTS ---
+
+.hero-section,
+.about-section,
+.projects-section,
+.contact-section {
+  background-color: transparent;
+  padding: 6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.header2 { 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem;
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.hero-section h1 {
+    font-size: 3.75rem;
+    font-weight: 700;
+}
+.hero-section .accent {
+    color: $accent-color;
+    display: block;
+}
+
+.footer2 {
+  background-color: $terminal-bg;
+  padding: 3rem 1.5rem;
+  text-align: center;
 }

@@ -1,39 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './components/Header';
-import Home from './components/Home';
+import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import TitleCard from './components/TitleCard';
+import CTA from './components/CTA';
+import Philosophy from './components/Philosophy';
+
 import './styles/App.scss';
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(prevMode => {
-      const newMode = !prevMode;
-      document.body.classList.toggle('dark-mode', newMode);
-      return newMode;
-    });
-  };
-
   return (
-    <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
-      <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      <main>
-        <div className="content-wrapper">
-          <Home />
-          <TitleCard title="About Me" />
-          <About />
-          <TitleCard title="Portfolio" />
-          <Projects isDarkMode={isDarkMode} />
-          <TitleCard title="Contact" />
-          <Contact />
-        </div>
-      </main>
-      <Footer />
+    <div className="App">      
+      <div className="content-container">
+        <Header />
+        <main>
+            <Hero />
+            <About />
+            <Philosophy />
+            <Projects />
+            <CTA />
+            <Contact />
+        </main>
+        <Footer />
+      </div>
+      
     </div>
   );
 };

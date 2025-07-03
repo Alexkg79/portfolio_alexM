@@ -1,29 +1,29 @@
+@import '../index.scss';
+
 .title-card-container {
   width: 100%;
-  max-width: 8px; 
-  margin: 0 auto; 
+  margin-bottom: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 50px 0;
   .title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: $primary-text-color;
     position: relative;
     display: inline-block;
-    padding-bottom: 10px;
-    margin: 100px 0 40px 0;
+    padding-bottom: 1rem; 
+
     .underline {
       position: absolute;
       bottom: 0;
-      left: 50%; 
-      transform: translateX(-50%);
-      width: 50%; 
+      left: 25%; 
       height: 4px;
-      background: linear-gradient(135deg, #f44369, #3e3b92);
+      background: $accent-color; 
       border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
     }
   }
 }
