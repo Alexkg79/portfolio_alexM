@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/portfolio_alex/static/css/main.7940067c.css",
-    "main.js": "/portfolio_alex/static/js/main.229f2409.js",
-    "static/css/688.7f1d3109.chunk.css": "/portfolio_alex/static/css/688.7f1d3109.chunk.css",
-    "static/js/688.4e487a80.chunk.js": "/portfolio_alex/static/js/688.4e487a80.chunk.js",
-    "static/js/453.bd1b5e84.chunk.js": "/portfolio_alex/static/js/453.bd1b5e84.chunk.js",
-    "static/media/pr_react1.webp": "/portfolio_alex/static/media/pr_react1.d4a6e3ce1ce3d84169ac.webp",
-    "static/media/pr_int1.webp": "/portfolio_alex/static/media/pr_int1.f5372223bb75911a867b.webp",
-    "static/media/pr_react2.webp": "/portfolio_alex/static/media/pr_react2.d498f2bec087ca06084c.webp",
-    "static/media/pr_be1.webp": "/portfolio_alex/static/media/pr_be1.874e2eb9ed7295988189.webp",
-    "static/media/pr_react3.webp": "/portfolio_alex/static/media/pr_react3.5000b91996ffdbf75a7e.webp",
-    "static/media/pp_alex.webp": "/portfolio_alex/static/media/pp_alex.7bbf348e3a70d58f5aa5.webp",
-    "static/media/pr_be2.webp": "/portfolio_alex/static/media/pr_be2.d4354d1a556975527034.webp",
-    "static/media/pr_be3.webp": "/portfolio_alex/static/media/pr_be3.3c5d5ac9f1a5d21d5571.webp",
-    "index.html": "/portfolio_alex/index.html",
-    "main.7940067c.css.map": "/portfolio_alex/static/css/main.7940067c.css.map",
-    "main.229f2409.js.map": "/portfolio_alex/static/js/main.229f2409.js.map",
-    "688.7f1d3109.chunk.css.map": "/portfolio_alex/static/css/688.7f1d3109.chunk.css.map",
-    "688.4e487a80.chunk.js.map": "/portfolio_alex/static/js/688.4e487a80.chunk.js.map",
-    "453.bd1b5e84.chunk.js.map": "/portfolio_alex/static/js/453.bd1b5e84.chunk.js.map"
+    "main.css": "/portfolio_alexM/static/css/main.7940067c.css",
+    "main.js": "/portfolio_alexM/static/js/main.2920c1c8.js",
+    "static/css/688.7f1d3109.chunk.css": "/portfolio_alexM/static/css/688.7f1d3109.chunk.css",
+    "static/js/688.4e487a80.chunk.js": "/portfolio_alexM/static/js/688.4e487a80.chunk.js",
+    "static/js/453.bd1b5e84.chunk.js": "/portfolio_alexM/static/js/453.bd1b5e84.chunk.js",
+    "static/media/pr_react1.webp": "/portfolio_alexM/static/media/pr_react1.d4a6e3ce1ce3d84169ac.webp",
+    "static/media/pr_int1.webp": "/portfolio_alexM/static/media/pr_int1.f5372223bb75911a867b.webp",
+    "static/media/pr_react2.webp": "/portfolio_alexM/static/media/pr_react2.d498f2bec087ca06084c.webp",
+    "static/media/pr_be1.webp": "/portfolio_alexM/static/media/pr_be1.874e2eb9ed7295988189.webp",
+    "static/media/pr_react3.webp": "/portfolio_alexM/static/media/pr_react3.5000b91996ffdbf75a7e.webp",
+    "static/media/pp_alex.webp": "/portfolio_alexM/static/media/pp_alex.7bbf348e3a70d58f5aa5.webp",
+    "static/media/pr_be2.webp": "/portfolio_alexM/static/media/pr_be2.d4354d1a556975527034.webp",
+    "static/media/pr_be3.webp": "/portfolio_alexM/static/media/pr_be3.3c5d5ac9f1a5d21d5571.webp",
+    "index.html": "/portfolio_alexM/index.html",
+    "main.7940067c.css.map": "/portfolio_alexM/static/css/main.7940067c.css.map",
+    "main.2920c1c8.js.map": "/portfolio_alexM/static/js/main.2920c1c8.js.map",
+    "688.7f1d3109.chunk.css.map": "/portfolio_alexM/static/css/688.7f1d3109.chunk.css.map",
+    "688.4e487a80.chunk.js.map": "/portfolio_alexM/static/js/688.4e487a80.chunk.js.map",
+    "453.bd1b5e84.chunk.js.map": "/portfolio_alexM/static/js/453.bd1b5e84.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7940067c.css",
-    "static/js/main.229f2409.js"
+    "static/js/main.2920c1c8.js"
   ]
 }
