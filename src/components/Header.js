@@ -14,7 +14,7 @@ export default function Header2() {
     <header className={`site-header ${isMenuOpen ? 'nav-open' : ''}`}>
       <div className="header-content">
         <div className="logo">
-          <a href="#">am</a>
+          <a href="#hero">am</a>
         </div>
         <nav className="main-nav">
           <ul>
