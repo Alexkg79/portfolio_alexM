@@ -14,6 +14,7 @@ export default function Contact() {
   const form = useRef();
   const [status, setStatus] = useState({ message: '', isError: false });
   // Fonction pour envoyer l'email via EmailJS
+  
   const sendEmail = (e) => {
     e.preventDefault();
 
