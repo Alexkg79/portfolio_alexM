@@ -48,6 +48,8 @@ export default function About() {
               <li>Tailwind CSS</li>
               <li>JavaScript</li>
               <li>React</li>
+              <li>Next.js</li>
+              <li>TypeScript</li>
               <li>Node.js</li>
               <li>Express.js</li>
               <li>PHP</li>
@@ -68,7 +70,6 @@ export default function About() {
             <h3>Actuellement en apprentissage :</h3>
             <ul class="skills-list">
               <li>Python</li>
-              <li>Next.js</li>
             </ul>
           </div>
         </div>
