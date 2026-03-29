@@ -18,15 +18,19 @@ export default function Header2() {
         </div>
         <nav className="main-nav">
           <ul>
-            {/* On ferme le menu quand on clique sur un lien */}
             <li><a href="#hero" onClick={toggleMenu}>Accueil</a></li>
             <li><a href="#about" onClick={toggleMenu}>À Propos</a></li>
             <li><a href="#projets" onClick={toggleMenu}>Projets</a></li>
             <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
           </ul>
+
+          <div className="nav-social-links">
+            <a href="https://www.linkedin.com/in/alex-marolleau/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+            <a href="https://github.com/Alexkg79" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
+            <a href="https://x.com/mrl_alex" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FontAwesomeIcon icon={faTwitter} /></a>
+          </div>
         </nav>
         
-        {/* Le clic sur le bouton déclenche la fonction toggleMenu */}
         <button className="mobile-nav-toggle" aria-label="Ouvrir la navigation" onClick={toggleMenu}>
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
