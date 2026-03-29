@@ -4,7 +4,6 @@ import { faCode, faBolt, faUniversalAccess, faMobileAlt } from '@fortawesome/fre
 import '../styles/Philosophy.scss';
 import TitleCard from './TitleCard';
 
-// --- Données pour la section Philosophie ---
 const philosophyData = [
   {
     id: 1,
@@ -32,20 +31,19 @@ const philosophyData = [
   }
 ];
 
-
 export default function Philosophy() {
   return (
     <section id="philosophy" className="philosophy-section">
       <div className="philosophy-content">
-        <TitleCard title="Ma Philosophie" /> 
+        <TitleCard title="Ma Philosophie" />
         <div className="philosophy-grid">
           {philosophyData.map((card) => (
             <div className="philosophy-card" key={card.id}>
-              <div className="card-icon">
+              <div className="philosophy-icon">
                 <FontAwesomeIcon icon={card.icon} />
               </div>
-              <h3 className="card-title">{card.title}</h3>
-              <p className="card-description">{card.description}</p>
+              <h3 className="philosophy-title">{card.title}</h3>
+              <p className="philosophy-description">{card.description}</p>
             </div>
           ))}
         </div>
