@@ -68,7 +68,7 @@ export default function Hero() {
           >
             <img
               src={photo}
-              alt="Photo de profil"
+              alt="Alex M, développeur front-end"
               className="profile-image"
               fetchpriority="high"
               loading='lazy'

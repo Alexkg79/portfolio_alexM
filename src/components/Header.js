@@ -24,12 +24,6 @@ export default function Header2() {
             <li><a href="#projets" onClick={toggleMenu}>Projets</a></li>
             <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
           </ul>
-
-          <div className="nav-social-links">
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FontAwesomeIcon icon={faTwitter} /></a>
-          </div>
         </nav>
         
         {/* Le clic sur le bouton déclenche la fonction toggleMenu */}
