@@ -77,8 +77,11 @@ export default function ProjectModal({ project, onClose }) {
 
             <div className="modal-section modal-actions">
                <a href={project.liveDemo} className="btn btn-primary" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faExternalLinkAlt} /> Démo Live</a>
-               <a href={project.sourceCode} className="btn btn-secondary" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /> Code Source</a>
-            </div>
+{project.sourceCode && (
+  <a href={project.sourceCode} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faGithub} /> Code
+  </a>
+)}            </div>
         </div>
       </div>
     </div>,
